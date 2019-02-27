@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1019963604132",
+    "firebase_url": "https://agil-aee92.firebaseio.com",
+    "project_id": "agil-aee92",
+    "storage_bucket": "agil-aee92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019963604132:android:13bcbd8510f10776",
+        "android_client_info": {
+          "package_name": "com.looboo.agil"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019963604132-q0sgnu520skr129l24hbaptuo5a5kjc0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.looboo.agil",
+            "certificate_hash": "f8255e9582476def385ce175c750414722beb33b"
+          }
+        },
+        {
+          "client_id": "1019963604132-g9t3ujgc8s0jh7lsfnbvso9obm6n05t5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7NtpbJR4rMSi1k0KlMqUsymRLeceSMxI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019963604132-g9t3ujgc8s0jh7lsfnbvso9obm6n05t5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
