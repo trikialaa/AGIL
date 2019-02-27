@@ -101,7 +101,7 @@ public class TrackerActivity extends FragmentActivity implements OnMapReadyCallb
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.addMarker(new MarkerOptions().position(station).title("Station"));
+        mMap.addMarker(new MarkerOptions().position(station).title("Compte"));
         mMap.addMarker(new MarkerOptions().position(camion).title("Camion"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(camion,15));
 
