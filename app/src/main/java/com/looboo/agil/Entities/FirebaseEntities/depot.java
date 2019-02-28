@@ -1,9 +1,9 @@
 package com.looboo.agil.Entities.FirebaseEntities;
 
 public class depot {
-    public int CODDPO;
-    public String NOMDPO;
-    public String TYPDPO;
+    private int CODDPO;
+    private String NOMDPO;
+    private String TYPDPO;
 
     public depot() {
     }

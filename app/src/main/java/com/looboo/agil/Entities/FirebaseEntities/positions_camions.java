@@ -1,12 +1,25 @@
 package com.looboo.agil.Entities.FirebaseEntities;
 
 public class positions_camions {
-    public String Date_P;
-    public String Longitude;
-    public String Latitude;
-    public int codecamion;
-    public int hh;
-    public int mm;
+    private String Date_P;
+    private String Longitude;
+    private String Latitude;
+    private String codecamion;
+    private String hh;
+    private String mm;
+
+
+    @Override
+    public String toString() {
+        return "positions_camions{" +
+                "Date_P='" + Date_P + '\'' +
+                ", Longitude='" + Longitude + '\'' +
+                ", Latitude='" + Latitude + '\'' +
+                ", codecamion=" + codecamion +
+                ", hh=" + hh +
+                ", mm=" + mm +
+                '}';
+    }
 
     public positions_camions() {
     }
@@ -35,27 +48,27 @@ public class positions_camions {
         Latitude = latitude;
     }
 
-    public int getCodecamion() {
+    public String getCodecamion() {
         return codecamion;
     }
 
-    public void setCodecamion(int codecamion) {
+    public void setCodecamion(String codecamion) {
         this.codecamion = codecamion;
     }
 
-    public int getHh() {
+    public String getHh() {
         return hh;
     }
 
-    public void setHh(int hh) {
+    public void setHh(String hh) {
         this.hh = hh;
     }
 
-    public int getMm() {
+    public String getMm() {
         return mm;
     }
 
-    public void setMm(int mm) {
+    public void setMm(String mm) {
         this.mm = mm;
     }
 }

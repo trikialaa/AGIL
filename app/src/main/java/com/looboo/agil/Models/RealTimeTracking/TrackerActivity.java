@@ -34,13 +34,15 @@ import java.util.List;
 public class TrackerActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
-    private LatLng camion = new LatLng(36.42344,10.12184);
+    private LatLng camion;
     private LatLng station = new LatLng(36.48802,10.10048);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tracker);
+        Bundle extras = getIntent().getExtras();
+        camion = new LatLng(extras.getFloat("long"),extras.getFloat("lat"));
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -103,7 +105,7 @@ public class TrackerActivity extends FragmentActivity implements OnMapReadyCallb
         mMap = googleMap;
         mMap.addMarker(new MarkerOptions().position(station).title("Compte"));
         mMap.addMarker(new MarkerOptions().position(camion).title("Camion"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(camion,15));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(camion,17.0f));
 
         String str_origin = "origin=" + camion.latitude + "," + camion.longitude;
         String str_dest = "destination=" + station.latitude + "," + station.longitude;

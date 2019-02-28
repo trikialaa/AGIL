@@ -2,12 +2,12 @@ package com.looboo.agil.Entities.FirebaseEntities;
 
 public class produit {
 
-    public int CODEMB;
-    public int CODPRD;
-    public String LIBEMB;
-    public String LIBPRD;
-    public int PDSPRD;
-    public String TYPPRD;
+    private int CODEMB;
+    private int CODPRD;
+    private String LIBEMB;
+    private String LIBPRD;
+    private int PDSPRD;
+    private String TYPPRD;
 
     public produit() {
     }

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class livraison {
 
-    public String id;
-    public String id_dep;
-    public ArrayList<Integer> id_commande;
-    public String dateheure;
+    private String id;
+    private String id_dep;
+    private ArrayList<Integer> id_commande;
+    private String dateheure;
 
     public livraison() {
 

@@ -3,11 +3,11 @@ package com.looboo.agil.Entities.FirebaseEntities;
 import java.util.Map;
 
 public class commande {
-    public String id;
-    public int id_compte;
-    public String type;
-    public Map<String,String> produits;
-    public String date_de_creation;
+    private String id;
+    private String id_compte;
+    private String type;
+    private Map<String,String> produits;
+    private String date_de_creation;
 
     public commande() {
     }
@@ -20,11 +20,11 @@ public class commande {
         this.id = id;
     }
 
-    public int getId_compte() {
+    public String getId_compte() {
         return id_compte;
     }
 
-    public void setId_compte(int id_compte) {
+    public void setId_compte(String id_compte) {
         this.id_compte = id_compte;
     }
 

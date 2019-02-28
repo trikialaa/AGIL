@@ -1,16 +1,16 @@
 package com.looboo.agil.Entities.FirebaseEntities;
 
 public class compte {
-    public int DPOSCP;
-    public int GVRPNT;
-    public String LATITUDE;
-    public String LIBGVR;
-    public String LIBLOC;
-    public String LOCPNT;
-    public String LONGITUDE;
-    public int MATCPT;
-    public String NOMCPT;
-    public long SCPSCP;
+    private int DPOSCP;
+    private int GVRPNT;
+    private String LATITUDE;
+    private String LIBGVR;
+    private String LIBLOC;
+    private String LOCPNT;
+    private String LONGITUDE;
+    private int MATCPT;
+    private String NOMCPT;
+    private long SCPSCP;
 
     public compte() {
     }
@@ -93,5 +93,21 @@ public class compte {
 
     public void setSCPSCP(long SCPSCP) {
         this.SCPSCP = SCPSCP;
+    }
+
+    @Override
+    public String toString() {
+        return "compte{" +
+                "DPOSCP=" + DPOSCP +
+                ", GVRPNT=" + GVRPNT +
+                ", LATITUDE='" + LATITUDE + '\'' +
+                ", LIBGVR='" + LIBGVR + '\'' +
+                ", LIBLOC='" + LIBLOC + '\'' +
+                ", LOCPNT='" + LOCPNT + '\'' +
+                ", LONGITUDE='" + LONGITUDE + '\'' +
+                ", MATCPT=" + MATCPT +
+                ", NOMCPT='" + NOMCPT + '\'' +
+                ", SCPSCP=" + SCPSCP +
+                '}';
     }
 }

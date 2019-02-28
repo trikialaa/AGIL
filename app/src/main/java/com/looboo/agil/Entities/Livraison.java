@@ -9,8 +9,17 @@ public class Livraison {
     public String dateHeure;
     public String type;
     public ArrayList<Commande> commandeList;
+    public String etat;
 
     public Livraison() {
+    }
+
+    public String getEtat() {
+        return etat;
+    }
+
+    public void setEtat(String etat) {
+        this.etat = etat;
     }
 
     public String getId() {

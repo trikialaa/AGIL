@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-import com.looboo.agil.MainActivity;
+import com.looboo.agil.Models.RealTimeTracking.MyCommandsActivity;
 import com.looboo.agil.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(context, MainActivity.class));
+                startActivity(new Intent(context, MyCommandsActivity.class));
             }
         });
 

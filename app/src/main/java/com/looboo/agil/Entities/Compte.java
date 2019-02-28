@@ -17,6 +17,19 @@ public class Compte {
     public Compte() {
     }
 
+    @Override
+    public String toString() {
+        return "Compte{" +
+                "matricule='" + matricule + '\'' +
+                ", nom='" + nom + '\'' +
+                ", scompte='" + scompte + '\'' +
+                ", coord=" + coord +
+                ", gouv='" + gouv + '\'' +
+                ", localite='" + localite + '\'' +
+                ", commandeList=" + commandeList +
+                '}';
+    }
+
     public String getMatricule() {
         return matricule;
     }

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".Models.Login.LoginActivity">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bg"
+    tools:context=".Models.Login.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +37,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
                 android:hint="E-mail"
-                android:inputType="textEmailAddress" />
+                android:inputType="textEmailAddress"
+                android:textColor="@color/common_google_signin_btn_text_light" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -53,7 +55,8 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:hint="Mot de passe"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:textColor="@color/common_google_signin_btn_text_light" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -81,10 +84,10 @@
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
             android:text="Encore pas de compte? créez un compte maintenant"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/background_light"
             android:textSize="12sp"
             android:textStyle="bold" />
 
     </LinearLayout>
 
-    </ScrollView>
+</ScrollView>
