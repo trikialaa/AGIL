@@ -128,11 +128,11 @@ public class TrackerActivity extends FragmentActivity implements OnMapReadyCallb
         chandigarh_location.setLatitude(station.latitude);
         chandigarh_location.setLongitude(station.longitude);
 
-        double distance = (delhi_location.distanceTo(chandigarh_location))* 0.001 ;
+        double distance = ((delhi_location.distanceTo(chandigarh_location))* 0.001) ;
 
         AlertDialog alertDialog = new AlertDialog.Builder(TrackerActivity.this).create();
         alertDialog.setTitle("Info");
-        alertDialog.setMessage("La distance restante pour arriver à votre station est de : "+distance +" km");
+        alertDialog.setMessage("La distance restante pour arriver à votre station est de : " + String.format("%.3f",distance) +" km\nLe coût estimatif de ce voyage est "+String.format("%.3f",distance*0.3)+" DT");
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
