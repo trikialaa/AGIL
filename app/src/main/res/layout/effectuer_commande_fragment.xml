@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/agilColor">
+    android:background="@color/colorGrey">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +18,9 @@
         <RadioGroup
             android:id="@+id/type"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@color/colorGrey"
             android:orientation="horizontal">
 
@@ -25,6 +28,7 @@
                 android:id="@+id/car"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
                 android:layout_weight="1"
                 android:text="Carburant" />
 
@@ -40,18 +44,26 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/productsRecyclerView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/buttonAjouter"
-            android:layout_width="203dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="20dp"
-            android:background="@color/common_google_signin_btn_text_dark_focused"
-            android:text="Ajouter Commande"
-            android:textColor="@android:color/white"
-            android:textSize="14sp" />
+            android:layout_weight="1"
+            android:background="@android:color/darker_gray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/agilColor"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/buttonAjouter"
+                android:layout_width="203dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:background="@color/common_google_signin_btn_text_dark_focused"
+                android:text="Ajouter Commande"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

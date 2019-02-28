@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginBottom="10dp"
-    android:background="@color/colorGrey"
+    android:background="@android:color/background_light"
     app:cardCornerRadius="25dp">
 
     <LinearLayout
@@ -56,18 +56,21 @@
                 android:layout_marginRight="40dp"
                 android:ems="10"
                 android:inputType="numberDecimal" />
+
         </LinearLayout>
 
         <Button
             android:id="@+id/addanother"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="right|center_horizontal"
+            android:layout_gravity="center_horizontal"
             android:layout_margin="20dp"
             android:background="@color/agilColor"
             android:text="Ajouter un autre produit"
             android:textAlignment="textStart"
             android:textColor="@color/cardview_light_background"
             android:textSize="12sp" />
+
     </LinearLayout>
+
 </android.support.v7.widget.CardView>

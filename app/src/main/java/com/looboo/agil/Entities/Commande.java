@@ -8,7 +8,8 @@ public class Commande {
     public String mat_compte;
     public String type;
     public String dateCreation;
-    public Map<String,String> produitList;
+    public String etat;
+    public Map<String,String> produits;
 
     public Commande() {
     }
@@ -45,11 +46,18 @@ public class Commande {
         this.dateCreation = dateCreation;
     }
 
-    public Map<String, String> getProduitList() {
-        return produitList;
+    public Map<String, String> setProduits() {
+        return produits;
     }
 
-    public void setProduitList(Map<String, String> produitList) {
-        this.produitList = produitList;
+    public String getEtat() {
+        return etat;
+    }
+    public void setEtat(String etat) {
+        this.etat=etat;
+    }
+
+    public void setProduits(Map<String, String> produitList) {
+        this.produits= produitList;
     }
 }
