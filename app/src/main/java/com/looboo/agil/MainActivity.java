@@ -15,5 +15,6 @@ public class MainActivity extends AppCompatActivity {
         DatabaseUtils databaseUtils = new DatabaseUtils();
         databaseUtils.loadDatabaseForAccount("5001");
         setContentView(R.layout.activity_main);
+
     }
 }

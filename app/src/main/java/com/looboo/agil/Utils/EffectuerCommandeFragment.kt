@@ -32,6 +32,7 @@ class EffectuerCommandeFragment : AppCompatActivity() {
     lateinit var viewAdapter: ProductAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
 
         setContentView(R.layout.effectuer_commande_fragment)
         recyclerView = findViewById(R.id.productsRecyclerView)
