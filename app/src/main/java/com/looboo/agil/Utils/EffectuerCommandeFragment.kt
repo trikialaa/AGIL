@@ -1,8 +1,6 @@
 package com.looboo.agil.Utils
 
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -13,12 +11,8 @@ import android.widget.*
 import com.google.firebase.database.FirebaseDatabase
 import com.looboo.agil.Entities.Commande
 import com.looboo.agil.R
-import kotlinx.android.synthetic.main.commandeticket.*
 import kotlinx.android.synthetic.main.effectuer_commande_fragment.*
-import org.w3c.dom.Text
 import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 import java.util.*
 
 class EffectuerCommandeFragment : AppCompatActivity() {
@@ -42,13 +36,14 @@ class EffectuerCommandeFragment : AppCompatActivity() {
             val currentDate = sdf.format(Date())
             mCommande.dateCreation = currentDate
             mCommande.mat_compte = "5001"
-            mCommande.produits= productsAgil
-            mCommande.etat="en attente"
-            mCommande.type=type
+            mCommande.produits = productsAgil
+            mCommande.etat = "0"
+            mCommande.type = type
             var database = FirebaseDatabase.getInstance().reference.child("commande")
             var key = database.push().key.toString()
-            mCommande.id= key
+            mCommande.id = key
             database.child(key.toString()).setValue(mCommande)
+            Toast.makeText(this@EffectuerCommandeFragment, "Succés", Toast.LENGTH_SHORT).show()
         })
 
         lub.setOnClickListener(
@@ -60,8 +55,8 @@ class EffectuerCommandeFragment : AppCompatActivity() {
         items.add(1)
         viewAdapter = ProductAdapter(items)
         recyclerView.layoutManager = (LinearLayoutManager(this))
-        recyclerView.adapter = viewAdapter}}
-        )
+        recyclerView.adapter = viewAdapter}} )
+
 
 
     car.setOnClickListener(
@@ -77,52 +72,55 @@ class EffectuerCommandeFragment : AppCompatActivity() {
 
     })
 
+        }
 
 
-
-    }
 
     inner class ProductAdapter(var items: ArrayList<Int>) : RecyclerView.Adapter<ProductAdapter.ProductHolder>() {
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductHolder {
-            val view = LayoutInflater.from(parent.context).inflate(R.layout.commandeticket, parent, false)
-            return ProductHolder(view)
-        }
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductHolder {
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.commandeticket, parent, false)
+                return ProductHolder(view)
+            }
 
-        override fun getItemCount(): Int {
-            return items.count()
-        }
+            override fun getItemCount(): Int {
+                return items.count()
+            }
 
-        override fun onBindViewHolder(holder: ProductHolder, position: Int) {
-            var nomProduits : Array<String>
-            var theRealPosition = position+1
-                    if (theRealPosition == items.size){holder.button.visibility=View.VISIBLE} else {holder.button.visibility=View.GONE}
-           if ( type=="car") {
-               nomProduits = arrayOf<String>("SUPER SANS PLOMB","PETROLE LAMPANT","GASOIL ORDINAIRE","GAZOLE 50","FUEL OIL N°2")
-               var adapter= ArrayAdapter(this@EffectuerCommandeFragment,android.R.layout.simple_list_item_1,nomProduits)
-               holder.name.adapter=adapter
-           }
-            else if (type=="lub"){
-               nomProduits = arrayOf<String>("TANIX 4WD SAE 15W50","ENI I-SINT 5W40","ENI I-SINT 10W40")
-               var adapter= ArrayAdapter(this@EffectuerCommandeFragment,android.R.layout.simple_list_item_1,nomProduits)
-               holder.name.adapter=adapter
-               var produitName: String = holder.name.selectedItem.toString()
-
-               productsAgil.put(produitName,holder.quantity.text.toString())
-           }
-            holder.button.setOnClickListener {
-                if(holder.quantity.text.toString()=="") {
-                    Toast.makeText(this@EffectuerCommandeFragment, "entrer une quantité valide", Toast.LENGTH_SHORT).show()
+            override fun onBindViewHolder(holder: ProductHolder, position: Int) {
+                var nomProduits: Array<String>
+                var theRealPosition = position + 1
+                if (theRealPosition == items.size) {
+                    holder.button.visibility = View.VISIBLE
                 } else {
-                    items.add(55)
-                    recyclerView!!.adapter!!.notifyItemInserted(items.size)
-
+                    holder.button.visibility = View.GONE
+                }
+                if (type == "car") {
+                    nomProduits = arrayOf<String>("SUPER SANS PLOMB", "PETROLE LAMPANT", "GASOIL ORDINAIRE", "GAZOLE 50", "FUEL OIL N°2")
+                    var adapter = ArrayAdapter(this@EffectuerCommandeFragment, android.R.layout.simple_list_item_1, nomProduits)
+                    holder.name.adapter = adapter
+                } else if (type == "lub") {
+                    nomProduits = arrayOf<String>("TANIX 4WD SAE 15W50", "ENI I-SINT 5W40", "ENI I-SINT 10W40")
+                    var adapter = ArrayAdapter(this@EffectuerCommandeFragment, android.R.layout.simple_list_item_1, nomProduits)
+                    holder.name.adapter = adapter
                     var produitName: String = holder.name.selectedItem.toString()
+
                     productsAgil.put(produitName, holder.quantity.text.toString())
                 }
+                holder.button.setOnClickListener {
+                    if (holder.quantity.text.toString() == "") {
+                        Toast.makeText(this@EffectuerCommandeFragment, "entrer une quantité valide", Toast.LENGTH_SHORT).show()
+                    } else {
+                        items.add(55)
+                        recyclerView!!.adapter!!.notifyItemInserted(items.size)
 
+                        var produitName: String = holder.name.selectedItem.toString()
+                        productsAgil.put(produitName, holder.quantity.text.toString())
+                    }
+
+                }
             }
-        }
+
 
 
         inner class ProductHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

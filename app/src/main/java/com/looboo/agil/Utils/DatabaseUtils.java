@@ -13,7 +13,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.looboo.agil.Entities.FirebaseEntities.positions_camions;
-import com.looboo.agil.Entities.FirebaseEntities.compte;
 import com.looboo.agil.Models.RealTimeTracking.TrackerActivity;
 
 import static android.content.ContentValues.TAG;
@@ -22,26 +21,6 @@ public class DatabaseUtils {
 
     positions_camions res;
     Button button;
-
-    public void loadDatabaseForAccount(String matCompte){
-        FirebaseDatabase mDatabase = FirebaseDatabase.getInstance();
-        DatabaseReference mDatabaseRef = mDatabase.getReference("compte");
-        Query query = mDatabaseRef.orderByChild("MATCPT").equalTo(matCompte);
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
-                    compte compte = childSnapshot.getValue(compte.class);
-                    Log.e(TAG, "Value is: " + compte.toString());
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                Log.e(TAG, "Erreur de l'importation des données de l'utilisateur", error.toException());
-            }
-        });
-    }
 
     public positions_camions loadCamionPositions(final Button button, final Context context){
         this.button=button;
